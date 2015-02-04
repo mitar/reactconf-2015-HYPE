@@ -160,6 +160,7 @@ Template.dbmon.helpers({
     var databases = Template.instance()._databases.get();
     Object.keys(databases).forEach(function(dbname) {
       databasesArray.push({
+        _id: dbname,
         dbname: dbname,
         samples: databases[dbname].samples
       });
