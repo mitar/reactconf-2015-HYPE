@@ -31,10 +31,10 @@ Template.column.helpers
     IMAGE_SIZE
 
   isCurrent: ->
-    Iron.controller().getParams().id is @id
+    Iron.controller().state.get('id') is @id
 
 Template.release.helpers
   currentRelease: ->
-    currentAlbum = _.findWhere @, id: Iron.controller().getParams().id
+    currentAlbum = _.findWhere @, id: Iron.controller().state.get('id')
     return unless currentAlbum
     Releases.get currentAlbum.id
