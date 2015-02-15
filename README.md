@@ -5,6 +5,7 @@ Meteor versions of demo programs from [Hype! React Conf talk from 2015](https://
 ([original source code](https://github.com/ryanflorence/reactconf-2015-HYPE)).
 
 * `01-dbmon` – http://dbmon.meteor.com/
+* `06-itunes-style-interface` – http://itunes.meteor.com/
 
 Running
 -------
