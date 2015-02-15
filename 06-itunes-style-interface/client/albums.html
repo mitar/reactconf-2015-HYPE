@@ -27,5 +27,9 @@
 <template name="release">
   {{#if currentRelease}}
     {{> album currentRelease}}
+  {{else}}
+    {{#if previousRelease}}
+      {{> album previousRelease}}
+    {{/if}}
   {{/if}}
 </template>

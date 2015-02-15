@@ -33,8 +33,14 @@ Template.column.helpers
   isCurrent: ->
     Iron.controller().state.get('id') is @id
 
+release = (data, fieldName) ->
+  currentAlbum = _.findWhere data, id: Iron.controller().state.get(fieldName)
+  return unless currentAlbum
+  Releases.get currentAlbum.id
+
 Template.release.helpers
   currentRelease: ->
-    currentAlbum = _.findWhere @, id: Iron.controller().state.get('id')
-    return unless currentAlbum
-    Releases.get currentAlbum.id
+    release @, 'id'
+
+  previousRelease: ->
+    release @, 'oldId'
